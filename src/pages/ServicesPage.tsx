@@ -31,13 +31,16 @@ const ServicesPage = () => (
               className="mb-20"
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center`}>
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shrink-0`}>
                   <Icon className="h-6 w-6 text-primary-foreground" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h2 className="font-display text-2xl md:text-3xl font-bold">{service.title}</h2>
                   <p className="text-muted-foreground text-sm">{service.description}</p>
                 </div>
+                {service.image && (
+                  <img src={service.image} alt={service.title} className="hidden md:block w-24 h-24 rounded-xl object-cover" />
+                )}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
