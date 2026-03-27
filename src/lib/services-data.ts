@@ -1,4 +1,5 @@
 import { Monitor, Code, Music, Share2, Palette } from "lucide-react";
+import djTommieImg from "@/assets/dj-tommie.png";
 
 export interface PricingTier {
   name: string;
