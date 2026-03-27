@@ -31,14 +31,21 @@ const ServicesOverview = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <Link to={`/booking?service=${service.id}`} className="block glass-card-hover p-6 h-full group">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}>
-                  <Icon className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <h3 className="font-display text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
-                <div className="flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
-                  Book Now <ArrowRight className="h-4 w-4" />
+              <Link to={`/booking?service=${service.id}`} className="block glass-card-hover overflow-hidden h-full group">
+                {service.image && (
+                  <div className="h-48 overflow-hidden">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                )}
+                <div className="p-6">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}>
+                    <Icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
+                  <div className="flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
+                    Book Now <ArrowRight className="h-4 w-4" />
+                  </div>
                 </div>
               </Link>
             </motion.div>

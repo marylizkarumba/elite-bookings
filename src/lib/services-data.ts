@@ -1,4 +1,5 @@
 import { Monitor, Code, Music, Share2, Palette } from "lucide-react";
+import djTommieImg from "@/assets/dj-tommie.png";
 
 export interface PricingTier {
   name: string;
@@ -13,6 +14,7 @@ export interface Service {
   description: string;
   icon: typeof Monitor;
   color: string;
+  image?: string;
   tiers: PricingTier[];
 }
 
@@ -46,6 +48,7 @@ export const services: Service[] = [
     title: "Deejaying",
     description: "Professional DJ services for events, parties, weddings, and corporate functions.",
     icon: Music,
+    image: djTommieImg,
     color: "from-amber-500 to-orange-400",
     tiers: [
       { name: "Basic", price: 299, features: ["3 hour set", "Basic sound system", "Standard playlist", "1 genre"] },
