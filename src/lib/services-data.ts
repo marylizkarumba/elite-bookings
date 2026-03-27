@@ -13,6 +13,7 @@ export interface Service {
   description: string;
   icon: typeof Monitor;
   color: string;
+  image?: string;
   tiers: PricingTier[];
 }
 
